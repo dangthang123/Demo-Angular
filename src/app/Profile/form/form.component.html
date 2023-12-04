@@ -1,0 +1,12 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="form col-md-6">
+            <app-reactive-form (formSubmitted)="handleFormSubmitted($event)"></app-reactive-form>
+        </div>
+        <div class="detail col-md-6">
+            <app-detail [formData]="formDataForAboutPage"></app-detail>
+        </div>
+    </div>
+</div>
+
+<app-table></app-table>

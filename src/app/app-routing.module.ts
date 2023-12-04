@@ -1,22 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ReactiveFormComponent } from './Components/reactive-form/reactive-form.component';
-import { DetailComponent } from './Components/detail/detail.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
   {
-    path: '',
-    component: ReactiveFormComponent,
-  },
-  {
-    path: 'test',
-    component: DetailComponent,
+    path: 'profile',
+    loadChildren: () =>
+      import('../app/Profile/profile.module').then((m) => m.ProfileModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

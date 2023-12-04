@@ -1,0 +1,31 @@
+<form [formGroup]="validateForm" (ngSubmit)="onSubmitForm()">
+
+    <div class=" form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <small class="error text-danger" *ngIf="validateForm.get('name')?.hasError('required')">Please enter
+            a valid
+            name
+        </small>
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" formControlName="phone">
+        <small class="error text-danger" *ngIf="validateForm.get('phone')?.hasError('required')">Please
+            enter a valid
+            phone
+        </small>
+        <small class="error text-danger" *ngIf="validateForm.get('phone')?.hasError('maxlength')">Phone
+            number should not exceed 10 digits</small>
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" class="form-control" formControlName="date">
+        <small class="error text-danger" *ngIf="validateForm.get('date')?.hasError('required')">Please enter
+            a valid
+            date
+        </small>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>

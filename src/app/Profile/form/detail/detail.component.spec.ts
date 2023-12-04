@@ -1,21 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Profile } from 'src/app/Profile/core/Interface/profile';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailComponent implements OnInit {
-  @Input() formData: any;
+export class DetailComponent implements OnChanges {
+  @Input() formData: Profile | undefined;
 
-  constructor() { }
   ngOnChanges(changes: SimpleChanges) {
     if (changes.formData && changes.formData.currentValue) {
       console.log('formData :', this.formData);
     }
   }
-  ngOnInit(): void {
-  }
-
-
 }

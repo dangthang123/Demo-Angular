@@ -2,10 +2,12 @@
     <p>Received Form:</p>
     <div *ngIf="formData">
         <p>Name: {{ formData.name }}</p>
-        <p>Phone: {{ formData.phone | phoneNumberFormat }}</p>
-        <p>Date: {{ formData.date | dateFormat }}</p>
+        <p>Phone: {{ formData.phone | phoneFormat}}</p>
+        <p>Date: {{ formData.date | formatDate}}</p>
     </div>
     <div *ngIf="!formData">
         <p class="text-danger">No data.</p>
     </div>
 </div>
+
+<!-- <button (click)="changeValue()">changeValue</button> -->

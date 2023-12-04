@@ -1,0 +1,19 @@
+<table class="table table-striped container mt-5">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let table of tables; index as i">
+            <th scope="row">{{table.id}}</th>
+            <td>{{table.name}}</td>
+            <td>{{table.phone}}</td>
+            <td>{{table.date}}</td>
+        </tr>
+        <tr>
+    </tbody>
+</table>
